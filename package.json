@@ -1,0 +1,22 @@
+{
+  "name": "april_2019",
+  "version": "1.0.0",
+  "description": "Nodejs Kurz im April 2019",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamburgcodingschool/April_2019.git"
+  },
+  "author": "Alexander Roddis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamburgcodingschool/April_2019/issues"
+  },
+  "homepage": "https://github.com/hamburgcodingschool/April_2019#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
