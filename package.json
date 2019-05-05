@@ -4,7 +4,8 @@
   "description": "Nodejs Kurz im April 2019",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration": "node bin/migration.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/hamburgcodingschool/April_2019#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "firebase-admin": "^7.3.0",
+    "mongoose": "^5.5.5"
   }
 }
