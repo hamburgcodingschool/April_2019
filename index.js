@@ -1,18 +1,22 @@
-var express = require('express');
-var app = express();
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
 
-app.use(express.static('public'));
+const router = require('./router')
 
-app.get('/api/marker', function (req, res) {
-    const jsonData = {
-        "test": {
-            "bla": 11111
-        }
-    };
-    res.setHeader('Content-Type', "application/json");
-    res.send(JSON.stringify(jsonData));
-});
+app.use(express.static('public'))
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
-});
+app.use(router)
+
+const url = require('./config/dbUrl').url
+
+mongoose.connect(url, { useNewUrlParser: true, useFindAndModify: false })
+
+const mongoseDb = mongoose.connection
+
+mongoseDb.on('error', console.error.bind(console, 'connection error:'))
+mongoseDb.once('open', () => {
+  app.listen(8080, () => {
+    console.log('Listening on Port 8080...')
+  })
+})

@@ -1,22 +1,32 @@
 {
-  "name": "april_2019",
+  "name": "hcs-nodejs",
   "version": "1.0.0",
-  "description": "Nodejs Kurz im April 2019",
+  "description": "App for HCS course Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamburgcodingschool/April_2019.git"
   },
-  "author": "Alexander Roddis",
+  "author": "Patrick Hampel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hamburgcodingschool/April_2019/issues"
   },
   "homepage": "https://github.com/hamburgcodingschool/April_2019#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "firebase-admin": "^7.3.0",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.5",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "nodemon": "^1.18.11"
   }
 }
