@@ -12,10 +12,10 @@ const url = require('./config/dbUrl').url
 
 mongoose.connect(url, { useNewUrlParser: true, useFindAndModify: false })
 
-const mongoseDb = mongoose.connection
+const mongoDb = mongoose.connection
 
-mongoseDb.on('error', console.error.bind(console, 'connection error:'))
-mongoseDb.once('open', () => {
+mongoDb.on('error', console.error.bind(console, 'connection error:'))
+mongoDb.once('open', () => {
   app.listen(8080, () => {
     console.log('Listening on Port 8080...')
   })
