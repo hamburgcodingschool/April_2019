@@ -23,6 +23,7 @@
     "firebase-admin": "^7.3.0",
     "mongodb": "^3.2.3",
     "mongoose": "^5.5.5",
+    "promise.series": "^0.2.0",
     "pug": "^2.0.3"
   },
   "devDependencies": {
