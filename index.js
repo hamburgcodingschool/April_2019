@@ -1,6 +1,13 @@
-const Destination = require('./models/destination').model;
+var express = require('express');
+var app = express();
+let Destination = require('./models/destination').model;
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/travelBlog', {useNewUrlParser: true});
 
-require('./bootstrap')().then((app) => {
+var mongooseDb = mongoose.connection;
+mongooseDb.on('error', console.error.bind(console, 'connection error:'));
+
+mongooseDb.once('open', function() {
     app.use(express.static('public'));
 
     app.get('/api/destination', function (req, res) {
@@ -28,6 +35,9 @@ require('./bootstrap')().then((app) => {
     app.listen(3000, function () {
         console.log('Example app listening on port 3000!');
     });
-}).catch((err) => {
-    console.error.bind(console, 'connection error:');
+
+    //hausaufgabe:
+
 });
+
+
