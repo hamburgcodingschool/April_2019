@@ -1,14 +1,18 @@
 function emptyDishwasher(cupboardNumber)
 {
     return new Promise(function(resolve, reject){
-        setTimeout(resolve, 2000);
+        setTimeout(() =>{
+            resolve(100);
+        }, 2000);
     });
 }
 
 function fillDishwasher(dishCount)
 {
     return new Promise(function(resolve, reject){
-        setTimeout(resolve, 1500);
+        setTimeout(() => {
+            resolve(105);
+        }, 1500);
     });
 }
 
@@ -53,4 +57,5 @@ function collapse()
     await cleanOven(false);
     await relaxAndDrinkABear();
     collapse();
+
 })();
