@@ -1,92 +1,12 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Travel Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-</head>
-
-<body>
-    <div class="modal">
-        <div class="modal-content">
-            <input id="id" class="id" type="hidden" />
-            <label for="name-input">Destination name:</label>
-            <input id="name-input" class="name" />
-            <label for="continent-input">Continent:</label>
-            <input id="continent-input" class="continent" />
-            <div class="position-container">
-                <div class="latitude-container">
-                    <label for="latitude-input">Latitude:</label>
-                    <input id="latitude-input" class="latitude" placeholder="click on map" />
-                </div>
-                <div class="longitude-container">
-                    <label for="longitude-input">Longitude:</label>
-                    <input id="longitude-input" class="longitude" placeholder="click on map" />
-                </div>
-            </div>
-            <label for="description-input">Write your story:</label>
-            <textarea id="description-input" class="description"></textarea>
-            <label for="image-input">Upload your photos:</label>
-            <input type="file" id="image-input" multiple>
-            <div class="button-container">
-                <button class="save-button">Post</button>
-                <button class="close-button">Cancel</button>
-            </div>
-        </div>
-    </div>
-    <header>
-        <h1 class="main-title">Travel blog</h1>
-        <div class="logout-container">
-            <h2 class="logout-button">Logout</h2>
-        </div>
-    </header>
-    <aside>
-        <div class="user-select-container">
-            <label for="user-select">Select a friend:</label>
-            <select id="user-select">
-            </select>
-        </div>
-        <ul class="destinations-list"></ul>
-
-        <div class="add-destination-container">
-            <button class="add-destination-button">+</button>
-        </div>
-    </aside>
-    <div class="map"></div>
-    <div class="login-overlay">
-        <button class="login-button">Login with Google</button>
-    </div>
-    <div class="blogview-overlay">
-        <div class="close-icon-container">
-            <img src="https://firebasestorage.googleapis.com/v0/b/js-for-web-kat.appspot.com/o/deleteIcon.svg?alt=media&token=f9304905-b43d-46df-b745-0702cfb5986b" class="close-blog-button">
-        </div>
-        <div class="title-container">
-            <h2 class="blog-title"></h2>
-        </div>
-        <div class="image-container"></div>
-        <div class="blog-content-container">
-            <p class="blog-content"></p>
-        </div>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-
-    <script src="scripts/lib/html-utilities.js"></script>
-
-    <script src="scripts/main.js"></script>
-
-    <script src="scripts/lib/map.js"></script>
-    <script src="scripts/lib/db-ubtilities.js"></script>
-    <script src="scripts/lib/auth.js"></script>
-    <script src="scripts/lib/overlay.js"></script>
-    <script src="scripts/lib/list.js"></script>
-    <script src="scripts/lib/blogview.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp6IzZAuxAhtfazcY5OJ8NO8EoqNw4xsw&callback=initApp&libraries=geometry" async defer></script>
-</body>
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Home Page</h1>
+  </body>
 </html>

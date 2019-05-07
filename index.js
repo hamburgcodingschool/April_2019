@@ -16,7 +16,7 @@ const mongoDb = mongoose.connection
 
 mongoDb.on('error', console.error.bind(console, 'connection error:'))
 mongoDb.once('open', () => {
-  app.listen(8080, () => {
-    console.log('Listening on Port 8080...')
+  app.listen(3000, () => {
+    console.log('Listening on Port 3000...')
   })
 })

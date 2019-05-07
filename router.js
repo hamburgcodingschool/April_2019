@@ -3,12 +3,12 @@ const router = express()
 
 const controllers = require('./controllers/controllers')
 
-router.get('/api/get-destinations', controllers.getDestinations)
+router.get('/api/destination', controllers.getDestination)
 
-router.post('/api/add-destination', controllers.addDestination)
+router.post('/api/destination', controllers.addDestination)
 
-router.patch('/api/update-destination', controllers.updateDestination)
+router.patch('/api/destination', controllers.updateDestination)
 
-router.delete('/api/delete-destination', controllers.deleteDestination)
+router.delete('/api/destination', controllers.deleteDestination)
 
 module.exports = router
