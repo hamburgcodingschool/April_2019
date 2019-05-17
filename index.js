@@ -1,5 +1,11 @@
 var express = require('express');
+var exphbs  = require('express-handlebars');
+
 var app = express();
+
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
 let Destination = require('./models/destination').model;
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/travelBlog', {useNewUrlParser: true});
@@ -10,6 +16,12 @@ mongooseDb.on('error', console.error.bind(console, 'connection error:'));
 mongooseDb.once('open', function() {
     app.use(express.static('public'));
 
+    app.get('/', function (req, res) {
+        res.render("home", {
+            name: "Was du willst"
+        });
+    });
+
     app.get('/api/destination', function (req, res) {
         Destination.find({}, function(err, records){
             if(err){
@@ -17,7 +29,7 @@ mongooseDb.once('open', function() {
                 return res.send();
             }
             res.setHeader('Content-Type', "application/json");
-            res.send(JSON.stringify(records));
+            res.send(JSON.stringify({"test": 1}));
         });
     });
 
@@ -35,9 +47,6 @@ mongooseDb.once('open', function() {
     app.listen(3000, function () {
         console.log('Example app listening on port 3000!');
     });
-
-    //hausaufgabe:
-
 });
 
 
