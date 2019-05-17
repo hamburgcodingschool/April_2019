@@ -8,19 +8,8 @@ image: node:10.15.3
 pipelines:
   default:
     - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-    - step:
-        name: Deploy to Test
-        deployment: test
-        script:
-          - echo "Deploying to test environment"
-    - step:
         name: Deploy to Production
         deployment: production
-        trigger: manual
         script:
           - pipe: atlassian/scp-deploy:0.3.3
             variables:
@@ -28,6 +17,11 @@ pipelines:
               SERVER: '35.157.125.215'
               REMOTE_PATH: '/var/www'
               LOCAL_PATH: '*'
+          - pipe: atlassian/ssh-run:0.1.4
+            variables:
+              SSH_USER: 'ubuntu'
+              SERVER: '35.157.125.215'
+              COMMAND: 'cd /var/www && npm install'
           - pipe: atlassian/ssh-run:0.1.4
             variables:
               SSH_USER: 'ubuntu'
