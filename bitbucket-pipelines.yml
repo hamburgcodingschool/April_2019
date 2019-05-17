@@ -12,6 +12,8 @@ pipelines:
           - node
         script: # Modify the commands below to build your repository.
           - npm install
+        artifacts:
+          - $BITBUCKET_CLONE_DIR DIR/**          
     - step:
         name: Deploy to Test
         deployment: test
