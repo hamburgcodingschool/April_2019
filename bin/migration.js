@@ -11,7 +11,7 @@ var firebaseDb = firebase.firestore();
 var destinations = firebaseDb.collection('destinations');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/travelBlog', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://test:test@cluster0-rjyhd.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 
 var mongooseDb = mongoose.connection;
 mongooseDb.on('error', console.error.bind(console, 'connection error:'));
