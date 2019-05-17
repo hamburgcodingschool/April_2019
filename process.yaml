@@ -1,0 +1,4 @@
+apps:
+- script : index.js
+  env_production:
+    NODE_ENV: production
