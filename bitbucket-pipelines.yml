@@ -10,21 +10,21 @@ pipelines:
             variables:
               SSH_USER: 'ubuntu'
               SERVER: '35.157.125.215'
-              COMMAND: 'cd /var/www/alex && sudo rm -rf *'
+              COMMAND: 'cd /var/www && sudo rm -rf *'
           - pipe: atlassian/scp-deploy:0.3.3
             variables:
               USER: 'ubuntu'
               SERVER: '35.157.125.215'
-              REMOTE_PATH: '/var/www/alex'
+              REMOTE_PATH: '/var/www'
               LOCAL_PATH: '*'
           - pipe: atlassian/ssh-run:0.1.4
             variables:
               SSH_USER: 'ubuntu'
               SERVER: '35.157.125.215'
-              COMMAND: 'cd /var/www/alex && npm install'
+              COMMAND: 'cd /var/www && npm install'
           - pipe: atlassian/ssh-run:0.1.4
             variables:
               SSH_USER: 'ubuntu'
               SERVER: '35.157.125.215'
-              COMMAND: 'cd /var/www/alex && sudo pm2 stop index && sudo pm2 start process.yaml'
+              COMMAND: 'cd /var/www && sudo pm2 stop index && sudo pm2 start process.yaml'
           
