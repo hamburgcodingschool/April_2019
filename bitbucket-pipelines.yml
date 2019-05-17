@@ -28,5 +28,9 @@ pipelines:
               SERVER: '35.157.125.215'
               REMOTE_PATH: '/var/www'
               LOCAL_PATH: '*'
-          
+          - pipe: atlassian/ssh-run:0.1.4
+            variables:
+              SSH_USER: 'ubuntu'
+              SERVER: '35.157.125.215'
+              COMMAND: 'cd /var/www && pm2 start process.yml'
           
