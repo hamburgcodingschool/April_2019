@@ -20,6 +20,6 @@ pipelines:
     - step:
         name: Deploy to Production
         deployment: production
-        # trigger: manual  # Uncomment to make this a manual deployment.
+        trigger: manual
         script:
           - echo "Deploying to production environment"          
