@@ -32,5 +32,5 @@ pipelines:
             variables:
               SSH_USER: 'ubuntu'
               SERVER: '35.157.125.215'
-              COMMAND: 'cd /var/www && pm2 start process.yml'
+              COMMAND: 'cd /var/www && sudo pm2 start process.yml'
           
