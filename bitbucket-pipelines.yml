@@ -11,6 +11,11 @@ pipelines:
         name: Deploy to Production
         deployment: production
         script:
+          - pipe: atlassian/ssh-run:0.1.4
+            variables:
+              SSH_USER: 'ubuntu'
+              SERVER: '35.157.125.215'
+              COMMAND: 'cd /var/www && sudo rm -rf *'
           - pipe: atlassian/scp-deploy:0.3.3
             variables:
               USER: 'ubuntu'
@@ -26,5 +31,5 @@ pipelines:
             variables:
               SSH_USER: 'ubuntu'
               SERVER: '35.157.125.215'
-              COMMAND: 'cd /var/www && sudo pm2 start process.yml'
+              COMMAND: 'cd /var/www && sudo pm2 stop index && sudo pm2 start process.yaml'
           
