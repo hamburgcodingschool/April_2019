@@ -22,4 +22,11 @@ pipelines:
         deployment: production
         # trigger: manual  # Uncomment to make this a manual deployment.
         script:
-          - echo "Deploying to production environment"          
+          - pipe: atlassian/scp-deploy:0.3.3
+            variables:
+              USER: 'bitbucket'
+              SERVER: '35.157.125.215'
+              REMOTE_PATH: '/var/www'
+              LOCAL_PATH: './'
+          
+          
