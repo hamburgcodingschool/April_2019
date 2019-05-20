@@ -1,8 +1,17 @@
 const DestinationController = require('./../src/Controller/DestinationController');
 let passport = require('passport');
 
+function authenticationMiddleware () {
+    return function (req, res, next) {
+        if (req.isAuthenticated()) {
+            return next()
+        }
+        res.redirect('/login')
+    }
+}
+
 module.exports.setupRoutes = function(app){
-    app.get('/',passport.authenticate('local'), function (req, res) {
+    app.get('/', authenticationMiddleware(), function (req, res) {
         res.render("home", {
             name: "Was du willst"
         });

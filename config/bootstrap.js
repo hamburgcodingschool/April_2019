@@ -31,7 +31,7 @@ function setupSecurity(app){
                 return done(null, {username: "admin", id: 1});
             }
 
-            return done(null, false, { message: 'Incorrect username.' });
+            return done(null, false, { message: 'Incorrect credentials.' });
         }
     ));
 }
@@ -50,19 +50,18 @@ module.exports.start = function(){
   return new Promise(function(resolve, reject){
       let app = express();
 
+
       app.use(cookieParser());
       app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
       app.use(session({
-          secret: 'dfjkgndiungdifngiednfgidunguidfguidnugdifg',
-          resave: false,
-          saveUninitialized: true,
-          cookie: { secure: true }
+          secret: 'dfjkgndiungdifngiednfgidunguidfguidnugdifg'
       }));
       app.use(flash());
-      setupViewEngine(app);
 
       setupSecurity(app);
+
+      setupViewEngine(app);
 
       setupDatabase().then(() => {
           return resolve(app);
